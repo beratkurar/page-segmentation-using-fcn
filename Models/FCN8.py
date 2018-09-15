@@ -1,13 +1,6 @@
 
-# https://github.com/wkentaro/pytorch-fcn/blob/master/torchfcn/models/fcn32s.py
-# fc weights into the 1x1 convs  , get_upsampling_weight 
-
-
-
 from keras.models import *
 from keras.layers import *
-
-
 import os
 file_path = os.path.dirname( os.path.abspath(__file__) )
 
@@ -42,10 +35,6 @@ def crop( o1 , o2 , i  ):
 
 def FCN8( nClasses ,  input_height=416, input_width=608 , vgg_level=3):
 
-	# assert input_height%32 == 0
-	# assert input_width%32 == 0
-
-	# https://github.com/fchollet/deep-learning-models/releases/download/v0.1/vgg16_weights_th_dim_ordering_th_kernels.h5
     img_input = Input(shape=(3,input_height,input_width))
 
     x = Conv2D(64, (3, 3), activation='relu', padding='same', name='block1_conv1', data_format=IMAGE_ORDERING )(img_input)
@@ -127,8 +116,6 @@ def FCN8( nClasses ,  input_height=416, input_width=608 , vgg_level=3):
     model.outputHeight = outputHeight
 
     return model
-
-
 
 if __name__ == '__main__':
 	m = FCN8( 101 )
