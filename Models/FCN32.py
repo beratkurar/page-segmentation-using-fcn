@@ -5,8 +5,9 @@ from keras.layers import *
 import os
 file_path = os.path.dirname( os.path.abspath(__file__) )
 
-IMAGE_ORDERING = 'channels_first'
+VGG_Weights_path = file_path+"/vgg.h5"
 
+IMAGE_ORDERING = 'channels_first'
 
 def FCN32( n_classes ,  input_height=416, input_width=608 , vgg_level=3):
 
