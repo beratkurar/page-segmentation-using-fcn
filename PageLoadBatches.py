@@ -5,7 +5,7 @@ Created on Thu Dec 21 13:20:20 2017
 @author: B
 """
 import sys
-sys.path.append('/root/fcnps/Models/')
+sys.path.append('/root/psufcn/Models/')
 import numpy as np
 import cv2
 import glob
